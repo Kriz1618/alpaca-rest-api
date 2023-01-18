@@ -1,0 +1,97 @@
+@api = http://localhost:3000/api/trading
+
+### test endpoint
+GET http://localhost:3000/test
+
+### get account info
+GET {{api}}/account
+
+### get account config 
+GET {{api}}/config
+
+### get account positions 
+GET {{api}}/positions
+
+### get account history 
+GET {{api}}/history
+
+### get news 
+GET {{api}}/news
+
+### get assets 
+GET {{api}}/assets?status=active&asset_class=crypto&exchange=FTXU
+
+### get asset
+GET {{api}}/asset?symbol=BTC/USD
+
+### get market calendar history
+GET {{api}}/calendar?start=2023/01/10&end=2023/01/17
+
+### get symbol quotes
+GET {{api}}/symbol/quotes?symbol=TMF&days=10
+
+### get symbol trades
+GET {{api}}/symbol/trades?symbol=ALGO/USD&days=1
+
+### get all orders
+GET {{api}}/orders?status=all
+
+
+### get order by id
+GET {{api}}/orders?orderId=5cdabade-aded-47be-9ef1-489695bfa39d
+
+
+### create order 
+POST {{api}}/order
+Content-Type: application/json
+
+{
+  "symbol": "BTC/USD",
+  "qty": 1,
+  "side": "buy",
+  "type": "market",
+  "time_in_force": "gtc"
+}
+
+
+
+### subscribe data stream
+POST {{api}}/data/subscribe
+Content-Type: application/json
+
+{
+  "symbols": {
+    "trades": ["FB", "AAPL"],
+    "bars": ["SPY", "FB"],
+    "dailyBars": ["FB"],
+    "quotes": ["AAPL"]
+  },
+  "date": "1673558702087"
+}
+
+### unsubscribe data stream
+POST {{api}}/data/unsubscribe
+Content-Type: application/json
+
+{
+  "quotes": ["AAPL"]
+}
+
+### subscribe crypto stream
+POST {{api}}/crypto/subscribe
+Content-Type: application/json
+
+{
+  "symbols": {
+  "bars": ["BTCUSD", "AAPL"]
+  },
+  "date": "1673558702087"
+}
+
+### unsubscribe crypto stream
+POST {{api}}/unsubscribe
+Content-Type: application/json
+
+{
+  "trades": ["BTC/USD", "AAPL", "TMF"]
+}
