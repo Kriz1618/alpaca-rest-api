@@ -49,12 +49,39 @@
 ```
 
 * Structuring the project modules
-
-
-## Run tests
-
-```sh
-npm run test
+```
+├── "README.md"
+├── "package-lock.json"
+├── "package.json"
+├── "requests"
+│   ├── "broker.requests.http"
+│   └── "trading.requests.http"
+├── "src"
+│   ├── "app.ts"
+│   ├── "commons"
+│   │   └── "index.ts"
+│   ├── "config.ts"
+│   ├── "controllers"
+│   │   ├── "alpaca.broker.controller.ts"
+│   │   ├── "alpaca.trading.controller.ts"
+│   │   ├── "healthcheck.controller.ts"
+│   │   └── "index.ts"
+│   ├── "index.ts"
+│   ├── "routes"
+│   │   ├── "alpaca.broker.route.ts"
+│   │   ├── "alpaca.trading.route.ts"
+│   │   ├── "healthCheck.route.ts"
+│   │   ├── "index.ts"
+│   │   └── "validators.ts"
+│   ├── "services"
+│   │   ├── "alpaca.broker.service.ts"
+│   │   ├── "alpaca.trading.service.ts"
+│   │   ├── "crypto.stream.service.ts"
+│   │   ├── "data.stream.service.ts"
+│   │   └── "index.ts"
+│   └── "types"
+│       └── "index.ts"
+└── "tsconfig.json"
 ```
 
 ## Author

@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 import {
   alpacaBrokerRouter,
   alpacaTradingRouter,
-  testRouter
+  healthCheckRouter
 } from "./routes";
 
 dotenv.config();
@@ -16,7 +16,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/test", testRouter);
+app.use("/healthCheck", healthCheckRouter);
 app.use("/api/trading", alpacaTradingRouter);
 app.use("/api/broker", alpacaBrokerRouter);
 

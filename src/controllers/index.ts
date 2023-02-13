@@ -1,4 +1,4 @@
-export { test } from './test.controller';
+export { healthCheck } from './healthcheck.controller';
 export {
   createNewOrder,
   getAccountData,
