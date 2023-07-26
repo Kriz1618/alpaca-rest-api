@@ -11,7 +11,6 @@ const alpaca = new Alpaca({
 });
 
 const websocket = alpaca.crypto_stream_v2;
-const data = alpaca.data_ws;
 
 websocket.onConnect(() => {
 });

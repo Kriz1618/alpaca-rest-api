@@ -1,7 +1,7 @@
-@api = http://localhost:3000/api/trading
+@api = http://localhost:3003/api/trading
 
 ### test endpoint
-GET http://localhost:3000/test
+GET http://localhost:3003/test
 
 ### get account info
 GET {{api}}/account

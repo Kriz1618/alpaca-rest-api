@@ -1,6 +1,6 @@
 import Alpaca from '@alpacahq/alpaca-trade-api';
 import { getDateFrom } from '../commons';
-import { 
+import {
   AssetsParams,
   MarketCalendarParams,
   SymbolParams,
@@ -36,7 +36,7 @@ export const getPortfolioHistory = async () => {
   return await alpaca.getPortfolioHistory({
     date_start: getDateFrom(1),
     date_end: new Date(),
-    period: 'all', 
+    period: 'all',
     timeframe: '1D',
     extended_hours: true
   });
@@ -74,7 +74,7 @@ export const getSymbolTrades = async (params: SymbolParams) => {
   const { symbol, days } = params;
   return await alpaca.getCryptoBars(
     symbol,
-    { 
+    {
       start: getDateFrom(days),
       end: new Date(),
       timeframe: "1Day",
@@ -86,7 +86,7 @@ export const getSymbolQuotes = async (params: any) => {
   const { symbol, days } = params;
   return await alpaca.getQuotesV2(
     symbol,
-    { 
+    {
       start: getDateFrom(days),
       end: new Date(),
       limit: 6
